@@ -1,0 +1,178 @@
+@font-face {
+    font-family: Serpentine;
+    src: url(./font/serpentine-sans-icg-bold.ttf);
+}
+
+
+/* Style global */
+body {
+    display: flex;
+    flex-direction: column;
+    /* Permet de disposer les éléments verticalement */
+    justify-content: center;
+    align-items: center;
+    /* Centre horizontalement */
+    height: 100vh;
+    background-color: #525256;
+    color: #fff;
+    font-family: Serpentine;
+    margin: 0;
+}
+
+.sampler {
+    text-align: right;
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #434343;
+    border-radius: 4px;
+
+    background-color: rgb(32, 32, 32);
+    background-image: url(./img/seamless-texture-whbackground-gradient-black-overlay-abstract-background-black_661047-669.avif);
+    background-size: 100%;
+    background-blend-mode: darken;
+
+    filter: saturate(120%);
+
+    transform: scale(90%);
+    box-shadow: 1px 1px 0px #1b1b1b, -1px 1px 0px #565555;
+}
+
+h1 {
+    width: 120px;
+    font-size: 1.2em;
+    text-align: center;
+    color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow:
+        0px 0px 5px #dadada,
+        0px 0px 1px #adadad,
+        0px 0px 1px #666666,
+        0px 0px 2px #00ccff,
+        0px 0px 3px #00ccff,
+        0px 0px 4px #00ccff;
+
+    margin-bottom: 50px;
+    background: rgb(24, 30, 35);
+    border: 6px ridge rgb(61, 63, 64);
+    border-radius: 50%;
+    padding: 30px;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.4);
+    margin-left: 120px;
+
+}
+
+.pads {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+}
+
+/* PADS TEXT */
+
+.pads p {
+    font-size: 26px;
+    font-weight: lighter;
+    color: rgba(227, 128, 46, 0.136);
+    transform: translate(8px, -40px);
+    font-family: Serpentine;
+    text-align: right;
+    filter: hue-rotate(16deg);
+    text-shadow:
+        0px 0px 2px #3f3b3b,
+        0px 0px 12px #000000,
+        -15px 5px 20px #6c3b2225,
+        0px 0px 1px #21201b;
+
+}
+
+/* Style global pour le texte actif */
+.pad.playing p {
+    color: #cf9d1e65;
+    text-shadow:
+        0 0 16px rgba(151, 205, 221, 0.352),
+        0 0 6px rgba(247, 159, 95, 0.6);
+    animation: textSub 2s infinite;
+}
+
+@keyframes textSub {
+    0% {
+        color: #cf7f1e43;
+    }
+
+    50% {
+        color: #b083318f;
+    }
+
+    100% {
+        color: #cf7f1e43;
+    }
+}
+
+
+
+
+.pad {
+    background: #0e0e0e;
+    color: #f2f2f2;
+    font-size: 1.2em;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 6px rgba(237, 188, 13, 0.441),
+        1px 1px 1px #04d9ff0d, 0px 2px 0px #000, -1px 0px 0px #000, 1px 0px 0px #000;
+    transition: transform 0.1s, box-shadow 0.1s;
+    width: 90px;
+    height: 70px;
+
+}
+
+
+.pad.playing {
+    background: rgb(15, 15, 15);
+    background: radial-gradient(circle, rgb(10, 10, 10) 0%, rgb(15, 15, 15) 41%, rgb(12, 12, 12) 100%);
+    box-shadow: 1px 3px 8px rgba(255, 209, 2, 0.567), -1px 3px 8px rgba(255, 209, 2, 0.567), 0px 3px 0px #000, -2px 0px 0px #000, 2px 0px 0px #000;
+    /* animation: padSub 2s infinite; */
+}
+
+@keyframes padSub {
+    0% {
+        box-shadow: 1px 3px 8px rgba(255, 209, 2, 0.567), -1px 3px 8px rgba(255, 209, 2, 0.567), 0px 3px 0px #000, -2px 0px 0px #000, 2px 0px 0px #000;
+    }
+
+    50% {
+        box-shadow: 2px 4px 8px rgba(255, 209, 3, 0.692), -2px 4px 8px rgba(255, 209, 3, 0.692), 0px 3px 0px #000, -2px 0px 0px #000, 2px 0px 0px #000;
+    }
+
+    100% {
+        box-shadow: 1px 3px 8px rgba(255, 209, 2, 0.567), -1px 3px 8px rgba(255, 209, 2, 0.567), 0px 3px 0px #000, -2px 0px 0px #000, 2px 0px 0px #000;
+    }
+}
+
+
+.pad:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pad.empty {
+    box-shadow: none;
+}
+
+.pad.empty p {
+    font-size: 26px;
+    font-weight: bolder;
+    color: rgba(33, 32, 31, 0.136);
+    transform: translate(4px, -38px);
+    font-family: Serpentine;
+    text-align: right;
+    filter: hue-rotate(16deg);
+    text-shadow:
+        0px 0px 2px #3f3b3b,
+        0px 0px 12px #000000,
+        0px 0px 1px #21201b;
+}
